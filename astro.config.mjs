@@ -26,7 +26,8 @@ export default defineConfig({
       [
         rehypeExternalLinks,
         {
-          content: { type: 'text', value: '🔗' }
+          content: { type: 'text', value: '🔗' },
+          target: '_blank'
         }
       ],
     ]
