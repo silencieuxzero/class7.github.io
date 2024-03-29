@@ -7,13 +7,15 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Comments from "@/components/Comments.astro";
 const title = "FRIEND";
 const friends = [
     {
-        name: "Blog1",
-        url: "https://www.google.com/",
+        icon: "",
+        name: "Blog2",
+        link: "https://www.google.com/",
         description: "Blog1 description",
     },
     {
@@ -45,17 +47,34 @@ const friends = [
 ---
 
 <BaseLayout title={title}>
+    <Card
+        className="hover:invert hover:text-ring transition duration-150 ease-in-out p-3 mb-3"
+    >
+        <div class="space-y-1">
+            <h4 class="text-base truncate font-semibold leading-none">Title</h4>
+            <p class="text-sm text-muted-foreground">description</p>
+        </div>
+        <Separator className="my-2" />
+        <div class="h-5 items-center space-x-4 text-sm lg:flex hidden">
+            <a href="/">url</a>
+            <Separator orientation="vertical" />
+            <a href="/">favicon</a>
+        </div>
+    </Card>
     <div
-        class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3"
+        class="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3"
     >
         {
             friends.map((e) => (
-                <a href={e.url} title={e.name + " - " + e.description}>
+                <a href={e.link} title={e.name + " - " + e.description}>
                     <Card className="hover:invert hover:text-ring transition duration-150 ease-in-out">
                         <CardHeader className="p-3">
-                            <CardTitle className="text-base truncate ...">
+                            <CardTitle className="text-base truncate">
                                 {e.name}
                             </CardTitle>
+                            <CardDescription className="text-sm text-muted-foreground truncate ">
+                                {e.description == "" ? "void" : e.description}
+                            </CardDescription>
                         </CardHeader>
                     </Card>
                 </a>
