@@ -47,7 +47,7 @@ const friends = [
 ---
 
 <BaseLayout title={title}>
-    <Card
+    <!-- <Card
         className="hover:invert hover:text-ring transition duration-150 ease-in-out p-3 mb-3"
     >
         <div class="space-y-1">
@@ -60,6 +60,25 @@ const friends = [
             <Separator orientation="vertical" />
             <a href="/">favicon</a>
         </div>
+    </Card> -->
+    <Card
+        className="hover:invert hover:text-ring transition duration-150 ease-in-out p-3 mb-3 w-1/2"
+    >
+        <CardHeader className="p-0 py-1">
+            <CardTitle
+                className="text-base truncate font-semibold leading-none"
+            >
+                Title
+                <p class="text-sm text-muted-foreground pt-1">description</p>
+            </CardTitle>
+            <CardDescription
+                className="text-sm text-muted-foreground truncate "
+            >
+                <Separator className="my-2" />
+                <a href="/">url</a>
+                <a href="/favicon.svg">favicon</a>
+            </CardDescription>
+        </CardHeader>
     </Card>
     <div
         class="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3"
