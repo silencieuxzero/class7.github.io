@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/mdx": "^2.2.0",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.2.2",
     "@astrojs/react": "^3.1.0",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-navigation-menu": "^1.1.4",
@@ -23,7 +23,7 @@
     "@tabler/icons-react": "^3.0.2",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "astro": "^4.5.7",
+    "astro": "^4.5.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.0-rc22",
