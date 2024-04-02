@@ -1,17 +1,19 @@
 ---
 import RootLayout from "@/layouts/RootLayout.astro";
-import {SocialIcons} from "@/components/SocialIcons";
+import { SocialIcons } from "@/components/SocialIcons";
 import Moving from "@/components/Moving.astro";
 import { SITE } from "@/config";
 const title = "AstroTheme";
 const description = "I put all my romanticism".toUpperCase();
-const author = "hexWars";
+const author = "Author";
 const time = "2020 - 2024";
 ---
 
 <RootLayout title={SITE.title}>
 	<Moving />
-	<div class="h-full flex justify-center items-center z-10 select-none">
+	<div
+		class="h-full justify-center items-center z-10 select-none md:flex hidden"
+	>
 		<div
 			class="text-foreground text-7xl grid title-wrapper mb-[2.7%] w-screen h-full items-center justify-center"
 		>
@@ -23,7 +25,11 @@ const time = "2020 - 2024";
 			</div>
 		</div>
 		<div
-			class="absolute fill-ring top-[38%] left-[36%] hover:-rotate-12 origin-center ease-in-out duration-300 transition-all"
+			class="md:absolute fill-ring hover:-rotate-12 origin-center ease-in-out duration-300 transition-all top-[39%]
+			2xl:left-[40%]
+			xl:left-[35%]
+			lg:left-[32%]
+			md:left-[30%]"
 		>
 			<svg
 				width="96"
@@ -38,7 +44,13 @@ const time = "2020 - 2024";
 				></path></svg
 			>
 		</div>
-		<div class="absolute fill-ring top-[50%] left-[64%]">
+		<div
+			class="absolute fill-ring top-[50%]
+		2xl:left-[62%]
+		xl:left-[65%]
+		lg:left-[68%]
+		md:left-[71%]"
+		>
 			<svg
 				width="15"
 				height="14"
@@ -69,18 +81,6 @@ const time = "2020 - 2024";
 		>
 			{description}
 		</div>
-		<!-- <div class="absolute flex bottom-[43%]">
-			{
-				SOCIALS.filter((social) => social.active).map((social) => (
-					<a
-						href={social.href}
-						class="w-5 h-5 mx-1 fill-none stroke-foreground hover:stroke-ring "
-					>
-						<Fragment set:html={socialIcons[social.name]} />
-					</a>
-				))
-			}
-		</div> -->
 		<div
 			class="absolute left-[42%] right-[42%] top-[63%] text-xs flex justify-center"
 		>
@@ -97,28 +97,44 @@ const time = "2020 - 2024";
 			{time}
 		</div>
 		<!-- left -->
-		<div
-			class="absolute left-[4%] right-[42%] top-[45%] text-xl font-extralight text-foreground flex gap-1"
-		>
+		<div class="absolute left-[4%] top-[45%]">
 			<SocialIcons />
 		</div>
 	</div>
-	<!-- picture -->
-	<!-- <div
-		class="w-full h-[90%] absolute flex place-items-center justify-center z-0"
-	>
-		<img
-			src="/dragon2.svg"
-			alt="dragon2"
-			class="h-[80%] blur fill-ring stroke-ring"
-		/>
-	</div> -->
 
-	<!-- 圆 -->
-	<!-- <div
-		class="absolute max-h-screen max-w-screen left-[60%] right-[42%] top-[10%] text-xl rounded-full bg-ring w-[380px] h-[380px] transition hover:scale-[110%] z-0 duration-1000 ease-in-out blur-3xl"
-	>
-	</div> -->
+	<div class="h-full justify-center items-center z-10 select-none md:hidden">
+		<div
+			class="text-foreground text-7xl grid title-wrapper mb-[2.7%] w-screen h-full items-center justify-center"
+		>
+			<div class="title-top ml-1 italic bg-foreground">
+				{title}
+			</div>
+			<div class="title-bottom italic bg-ring" aria-hidden="true">
+				{title}
+			</div>
+		</div>
+
+		<div
+			class="absolute left-[42%] right-[42%] top-[58%] text-xs flex font-bold justify-center underline decoration-dotted decoration-1 underline-offset-[20px] text-nowrap"
+		>
+			<SocialIcons />
+		</div>
+		<div
+			class="absolute left-[42%] right-[42%] top-[63%] text-xs flex justify-center text-nowrap"
+		>
+			{author}
+		</div>
+		<div
+			class="absolute left-[42%] right-[42%] top-[65%] text-xs flex justify-center"
+		>
+			-
+		</div>
+		<div
+			class="absolute left-[42%] right-[42%] top-[67%] text-xs flex justify-center text-nowrap"
+		>
+			{time}
+		</div>
+	</div>
 </RootLayout>
 
 <style>
