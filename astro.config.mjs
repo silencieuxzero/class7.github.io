@@ -3,7 +3,8 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import rehypeExternalLinks from 'rehype-external-links';
-
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
@@ -19,10 +20,10 @@ export default defineConfig({
       theme: "catppuccin-mocha",
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
-      // Plugins
-      remarkPlugins: []
     },
+    remarkPlugins: [remarkMath],
     rehypePlugins: [
+      rehypeKatex,
       [
         rehypeExternalLinks,
         {

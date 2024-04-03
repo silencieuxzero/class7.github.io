@@ -59,14 +59,12 @@ const friends = [
             </CardTitle>
             <CardDescription className="text-muted-foreground truncate ">
                 <Separator className="my-2" />
-                <a href="/" class="text-sm truncate">url</a>
-                <a href="/favicon.svg" class="text-sm truncate">favicon</a>
+                <div class="text-sm truncate">url</div>
+                <div class="text-sm truncate">favicon</div>
             </CardDescription>
         </CardHeader>
     </Card>
-    <div
-        class="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3"
-    >
+    <div class="grid 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3">
         {
             friends.map((e) => (
                 <a href={e.link} title={e.name + " - " + e.description}>

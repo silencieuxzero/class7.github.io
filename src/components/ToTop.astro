@@ -1,0 +1,24 @@
+---
+import { SITE, MDCONFIG } from "@/config";
+import { ArrowRight } from "lucide-react";
+---
+
+{MDCONFIG.show && <slot name="toc" />}
+
+{
+    (
+        <div
+            onclick={"scrollToSection('top')"}
+            class="fixed mx-8 bottom-10 flex origin-left -rotate-90 h-6 items-center"
+        >
+            <ArrowRight className="stroke-ring scale-125 hover:scale-150 transition delay-0 ease-in-out" />
+            <a
+                id="mail"
+                href={"mailto:" + SITE.mail}
+                class="select-none text-base px-2"
+            >
+                {SITE.mail}
+            </a>
+        </div>
+    )
+}

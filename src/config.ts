@@ -27,11 +27,11 @@ export const NAVMENU: NavMenu[] = [
         name: 'POST',
         url: '/posts/',
     },
-    {
-        id: '2',
-        name: 'CATEGORY',
-        url: '/categories/',
-    },
+    // {
+    //     id: '2',
+    //     name: 'CATEGORY',
+    //     url: '/categories/',
+    // },
     {
         id: '3',
         name: 'TAG',
