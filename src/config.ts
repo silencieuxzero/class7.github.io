@@ -24,8 +24,8 @@ export const MDCONFIG: MdConfig = {
 export const NAVMENU: NavMenu[] = [
     {
         id: '1',
-        name: 'POST',
-        url: '/posts/',
+        name: 'ARCHIVE',
+        url: '/archives/',
     },
     // {
     //     id: '2',
