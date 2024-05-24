@@ -21,7 +21,8 @@ var thisYear: number = 0;
                         thisYear = post.data.pubDate.getFullYear();
                         return (
                             <>
-                                <li class="px-2 my-3 font-semibold border-4 border-background border-l-ring/90">
+                                <li class="px-2 my-3 font-semibold text-lg flex gap-x-2">
+                                    <div class="h-full w-1 bg-ring">&nbsp;</div>
                                     {thisYear}
                                 </li>
                                 <ArticleItem post={post} />
