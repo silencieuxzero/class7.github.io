@@ -16,25 +16,6 @@ const { Content, headings } = await entry.render();
 ---
 
 <PostLayout frontmatter={entry.data}>
-    <div
-        id="toc"
-        slot="toc"
-        class="fixed ml-6 top-[15%] h-[45%] scroll-smooth flex flex-col overflow-y-scroll overflow-x-visible text-foreground/30 will-change-scroll"
-    >
-        {
-            headings
-                // .filter((e) => (e.depth >= MDCONFIG.max && e.depth <= MDCONFIG.min))
-                .map((e) => (
-                    <div
-                        onclick={"scrollToSection('" + e.slug + "')"}
-                        class="hover:border-l-ring border-background border-2 px-2 text-sm origin-left hover:text-foreground hover:scale-105 transition delay-0 ease-in-out"
-                        style={{ paddingLeft: e.depth * 10 + "px" }}
-                    >
-                        {e.text}
-                    </div>
-                ))
-        }
-    </div>
     <Content />
 </PostLayout>
 

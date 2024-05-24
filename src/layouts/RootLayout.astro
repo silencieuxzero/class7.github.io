@@ -8,7 +8,6 @@ interface Props {
 const { title } = Astro.props;
 import Footer from "../components/Footer.astro";
 import { Navigation } from "@/components/NavigationMenu";
-import LoadingIndicator from "astro-loading-indicator/component";
 import "@/styles/globals.css";
 ---
 
@@ -47,8 +46,8 @@ import "@/styles/globals.css";
 						>
 					</a>
 				</div>
+
 				<Navigation client:idle transition:persist />
-				<LoadingIndicator color="hsl(var(--ring))" />
 			</div>
 			<div
 				class="flex flex-1 dark:bg-[url('/bg-grid.png')] dark:bg-fixed min-h-screen"
@@ -72,11 +71,7 @@ import "@/styles/globals.css";
 				<Footer />
 			</div> -->
 		</div>
-		<style is:global>
-			.fontText {
-				font-family: "MonaspaceRadon", sans-serif;
-			}
-		</style>
+		<style></style>
 		<script>
 			import { isDark } from "@/store.ts";
 			// 从localstorage|系统获取主题

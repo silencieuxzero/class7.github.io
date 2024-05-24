@@ -1,9 +1,9 @@
 ---
+import { SocialIcons } from "./SocialIcons";
 import { SITE, MDCONFIG } from "@/config";
 import { ArrowRight } from "lucide-react";
+const currentYear = new Date().getFullYear();
 ---
-
-{MDCONFIG.show && <slot name="toc" />}
 
 {
     (
@@ -13,12 +13,19 @@ import { ArrowRight } from "lucide-react";
         >
             <ArrowRight className="stroke-ring scale-125 hover:scale-150 transition delay-0 ease-in-out" />
             <a
-                id="mail"
                 href={"mailto:" + SITE.mail}
-                class="select-none text-base px-2"
+                class="font select-none text-base px-2"
             >
                 {SITE.mail}
             </a>
+            <div class="font font-bold text-nowrap text-ring text-sm">
+                2020-{currentYear}
+            </div>
         </div>
     )
 }
+<style>
+    .font {
+        font-family: "MonaspaceRadon", sans-serif;
+    }
+</style>
