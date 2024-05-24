@@ -34,8 +34,8 @@ export const NAVMENU: NavMenu[] = [
     // },
     {
         id: '3',
-        name: 'TAG',
-        url: '/tags/',
+        name: 'META',
+        url: '/meta/',
     },
     {
         id: '4',

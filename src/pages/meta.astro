@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TagItem from "@/components/TagItem.astro";
+const allPosts = await getCollection("posts");
+const title = "META";
+const uniqueTags: string[] = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+] as string[];
+const tagMap: Map<string, number> = new Map();
+allPosts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+        tagMap.has(tag)
+            ? tagMap.set(tag, tagMap.get(tag)! + 1)
+            : tagMap.set(tag, 1);
+    });
+});
+
+// --- category array
+const uniqueCategorys: string[] = [
+    ...new Set(allPosts.map((post) => post.data.categories).flat()),
+] as string[];
+// --- category map cnt
+const categoryMap: Map<string, number> = new Map();
+allPosts.forEach((post) => {
+    post.data.categories.forEach((category) => {
+        categoryMap.has(category)
+            ? categoryMap.set(category, categoryMap.get(category)! + 1)
+            : categoryMap.set(category, 1);
+    });
+});
+---
+
+<BaseLayout title={title}>
+    <div class="my-5 font-semibold text-lg flex gap-x-2">
+        <div class="h-full w-1 bg-ring">&nbsp;</div>
+        Categories
+    </div>
+    <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1">
+        {
+            uniqueCategorys.map((item) => (
+                <TagItem
+                    url={"/category/" + item}
+                    tag={item}
+                    num={categoryMap.get(item)}
+                />
+            ))
+        }
+    </div>
+    <div class="my-5 font-semibold text-lg flex gap-x-2 pt-10">
+        <div class="h-full w-1 bg-ring">&nbsp;</div>
+        Tags
+    </div>
+    <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1">
+        {
+            uniqueTags.map((item) => (
+                <TagItem
+                    url={"/tag/" + item}
+                    tag={item}
+                    num={tagMap.get(item)}
+                />
+            ))
+        }
+    </div>
+</BaseLayout>
