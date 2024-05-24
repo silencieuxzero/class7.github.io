@@ -8,6 +8,7 @@ interface Props {
 const { title } = Astro.props;
 import Footer from "../components/Footer.astro";
 import { Navigation } from "@/components/NavigationMenu";
+import LoadingIndicator from "astro-loading-indicator/component";
 import "@/styles/globals.css";
 ---
 
@@ -30,26 +31,28 @@ import "@/styles/globals.css";
 		<title>{title}</title>
 	</head>
 	<body class="">
-		<div class="flex flex-col h-screen">
+		<div class="flex flex-col h-full">
 			<div
-				class="py-3 xl:px-96 fixed top-0 z-0 max-h-[7%] w-full flex xl:justify-between justify-end backdrop-blur"
+				class="2xl:px-40 py-3 fixed top-0 z-0 max-h-[7%] w-full flex md:justify-between justify-end backdrop-blur"
 			>
-				<div class="xl:flex hidden">
+				<div class="md:flex hidden">
 					<a
 						href="/"
 						class="font-bold flex-col mx-2 flex justify-center"
 					>
 						<span
-							><span class="text-ring text-lg">「</span>HEXW<span
+							><span class="text-ring text-lg">「</span>^_^<span
 								class="text-ring text-lg">」</span
 							></span
 						>
 					</a>
 				</div>
-
 				<Navigation client:idle transition:persist />
+				<LoadingIndicator color="hsl(var(--ring))" />
 			</div>
-			<div class="mt-[5%] flex flex-1">
+			<div
+				class="flex flex-1 dark:bg-[url('/bg-grid.png')] dark:bg-fixed min-h-screen"
+			>
 				<div class="2xl:w-1/4
 				md:w-1/12">
 					<slot name="left" class="hidden md:block" />
@@ -57,6 +60,7 @@ import "@/styles/globals.css";
 				<div class="w-full
 				2xl:w-1/2
 				md:w-5/6">
+					<p id="top"></p>
 					<slot />
 				</div>
 				<div class="2xl:w-1/4
@@ -64,11 +68,15 @@ import "@/styles/globals.css";
 					<slot name="right" class="hidden md:block" />
 				</div>
 			</div>
-			<div class="py-1 sticky top-0 z-0 w-full md:flex h-[4%]">
+			<!-- <div class="py-1 sticky top-0 z-0 w-full md:flex h-[4%]">
 				<Footer />
-			</div>
+			</div> -->
 		</div>
-		<style></style>
+		<style is:global>
+			.fontText {
+				font-family: "MonaspaceRadon", sans-serif;
+			}
+		</style>
 		<script>
 			import { isDark } from "@/store.ts";
 			// 从localstorage|系统获取主题

@@ -3,14 +3,13 @@ import RootLayout from "./RootLayout.astro";
 import { MDCONFIG, SITE } from "@/config";
 import { ArrowRight } from "lucide-react";
 import ToTop from "@/components/ToTop.astro";
-import TagList from "@/components/TagList.astro";
 import Comments from "@/components/Comments.astro";
+import TagList from "@/components/TagList.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <RootLayout title={frontmatter.title}>
-    <div class="w-full flex flex-col shadow-foreground/10">
-        <p id="top"></p>
+    <div class="w-full flex flex-col bg-background my-32">
         <div class="w-full py-10 px-8 flex flex-col items-start">
             <div class="text-5xl font-bold">
                 {frontmatter.title}
