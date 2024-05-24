@@ -32,11 +32,13 @@ allPosts.forEach((post) => {
 ---
 
 <BaseLayout title={title}>
-    <div class="my-5 font-semibold text-lg flex gap-x-2">
+    <div class="my-3 px-2 font-semibold text-lg flex gap-x-2">
         <div class="h-full w-1 bg-ring">&nbsp;</div>
         Categories
     </div>
-    <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1">
+    <div
+        class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1 px-2 py-1"
+    >
         {
             uniqueCategorys.map((item) => (
                 <TagItem
@@ -47,11 +49,13 @@ allPosts.forEach((post) => {
             ))
         }
     </div>
-    <div class="my-5 font-semibold text-lg flex gap-x-2 pt-10">
+    <div class="my-3 px-2 font-semibold text-lg flex gap-x-2 pt-10">
         <div class="h-full w-1 bg-ring">&nbsp;</div>
         Tags
     </div>
-    <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1">
+    <div
+        class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-x-2 gap-y-1 px-2 py-1"
+    >
         {
             uniqueTags.map((item) => (
                 <TagItem
