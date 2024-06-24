@@ -2,12 +2,12 @@ import type { Site, Locale, NavMenu, MdConfig } from "@/types";
 import { Github } from "lucide-react";
 
 export const SITE: Site = {
-    url: "https://example.com/",
-    author: "hexWers",
-    describe: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    title: "Sehnsucht",
+    url: "https://silencieuxzero.github.io/class7.github.io",
+    author: "送葬人",
+    describe: "将回忆存放于此",
+    title: "2021级7班班级网站",
     lightAndDarkMode: true,
-    mail: "mail@example.com"
+    mail: "rain_wind1217@outlook.com"
 };
 
 export const LOCALE: Locale = {
@@ -24,27 +24,32 @@ export const MDCONFIG: MdConfig = {
 export const NAVMENU: NavMenu[] = [
     {
         id: '1',
-        name: 'ARCHIVE',
+        name: '归档',
         url: '/archives/',
     },
-    // {
-    //     id: '2',
-    //     name: 'CATEGORY',
-    //     url: '/categories/',
-    // },
+    {
+        id: '2',
+        name: '分类',
+        url: '/categories/',
+    },
     {
         id: '3',
-        name: 'META',
+        name: '云',
         url: '/meta/',
     },
     {
         id: '4',
-        name: 'FRIEND',
-        url: '/friends/',
+        name: '相册',
+        url: '/categories/',
     },
     {
         id: '5',
-        name: 'ABOUT',
+        name: '友情链接',
+        url: '/friends/',
+    },
+    {
+        id: '6',
+        name: '关于',
         url: '/about/',
         prefetch: true,
     },

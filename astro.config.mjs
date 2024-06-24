@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hexw.zeabur.app",
+  site: "https://silencieuxzero.github.io/class7.github.io",
   integrations: [react(), tailwind({
     applyBaseStyles: false
   }), sitemap(), mdx()],
